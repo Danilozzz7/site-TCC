@@ -1,4 +1,5 @@
 import VagaCard from "../../components/VagaCard/VagaCard";
+import "./Vagas.css";
 
 const vagas = [
     {

@@ -1,3 +1,11 @@
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #3882f1 0%, #000 100%);
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -5,13 +13,10 @@
     max-width: 350px;
     padding: 40px;
     border-radius: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #1a1a1a;
     color: #fff;
     border: 1px solid #333;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
 }
 
 .title {
@@ -41,35 +46,18 @@
     animation: pulse 1s linear infinite;
 }
 
-.message,
-.signin {
+.message {
     font-size: 14.5px;
     color: rgba(255, 255, 255, 0.7);
-}
-
-.signin {
-    text-align: center;
-}
-
-.signin a:hover {
-    text-decoration: underline royalblue;
-}
-
-.signin a {
-    color: #00bfff;
-}
-
-.flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
+    margin-bottom: 10px;
 }
 
 .form label {
     position: relative;
 }
 
-.form label .input {
+.input,
+select.input {
     background-color: #333;
     color: #fff;
     width: 100%;
@@ -77,9 +65,14 @@
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
+    font-size: medium;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
-.form label .input+span {
+.form label .input+span,
+.form label select.input+span {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
     left: 10px;
@@ -87,23 +80,23 @@
     font-size: 0.9em;
     cursor: text;
     transition: 0.3s ease;
+    pointer-events: none;
 }
 
-.form label .input:placeholder-shown+span {
+.form label .input:placeholder-shown+span,
+.form label select.input:placeholder-shown+span {
     top: 12.5px;
     font-size: 0.9em;
 }
 
 .form label .input:focus+span,
-.form label .input:valid+span {
+.form label .input:valid+span,
+.form label select.input:focus+span,
+.form label select.input:valid+span {
     color: #00bfff;
     top: 0px;
     font-size: 0.7em;
     font-weight: 600;
-}
-
-.input {
-    font-size: medium;
 }
 
 .submit {
@@ -115,6 +108,7 @@
     font-size: 16px;
     transition: .3s ease;
     background-color: #00bfff;
+    margin-top: 10px;
 }
 
 .submit:hover {
@@ -130,4 +124,10 @@
         transform: scale(1.8);
         opacity: 0;
     }
+}
+
+input:valid, select:valid {
+    border-color: #00bfff !important;
+    box-shadow: none !important;
+    color: #fff;
 }

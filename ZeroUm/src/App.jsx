@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Vagas from "./pages/Vagas/Vagas";
 import Perfil from "./pages/Perfil/Perfil";
 import Login from "./pages/Login/Login";
+import Cadastro from "./pages/Login/cadastro";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/vagas" element={<Vagas />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
       <Footer />
     </Router>

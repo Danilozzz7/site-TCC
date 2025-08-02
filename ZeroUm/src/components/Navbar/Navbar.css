@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, #135fd1, #333333);
+    background: linear-gradient(to right, #3882f1, #000000);
     color: #fff;
     padding: 0 32px;
     height: 70px;
@@ -16,6 +16,7 @@
 .navbar-logo {
     font-size: 1.5rem;
     font-weight: bold;
+    padding-left: 26px;
     letter-spacing: 2px;
 }
 
@@ -24,10 +25,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.navbar-list li {
-    margin-left: 24px;
+    gap: 24px;
 }
 
 .navbar-list a {
@@ -39,4 +37,16 @@
 
 .navbar-list a:hover {
     color: #00bfff;
+}
+
+.login-entre {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-right: 50px;
+    gap: 12px;
+}
+
+.login-entrar {
+    color: #fff;
 }
