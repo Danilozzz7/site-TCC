@@ -8,20 +8,20 @@ function Footer() {
                     <h4>Sobre</h4>
                     <p>
                         Portal de Estágios para a Escola Brásilio Flores de Azevedo.<br />
-                        Conectando alunos e oportunidades.
+                        De aluno para aluno.
                     </p>
                 </div>
                 <div className="footer-section">
                     <h4>Contato</h4>
                     <p>
                         <span className="icon-link"><i className="fas fa-envelope"></i></span>
-                        contato@brasiliostagios.com<br />
+                        contato@zeroumestagios.com<br />
                         <span className="icon-link"><i className="fas fa-phone"></i></span>
-                        (51) 99999-9999
+                        (11) 99999-9999
                     </p>
                     <p>
                         <span className="icon-link"><i className="fas fa-map-marker-alt"></i></span>
-                        Rua Exemplo, 123 - Porto Alegre/RS
+                  R. Interna Grupo Bandeirante, 138 - Jardim Belval, Barueri - SP 06420-150
                     </p>
                 </div>
                 <div className="footer-section">
@@ -40,7 +40,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2025 Portal de Estágios para a Escola Brásilio Flores de Azevedo</p>
+                <p>&copy; ZeroUm. 2025 Portal de Estágios para a Escola Brásilio Flores de Azevedo</p>
             </div>
         </footer>
     );
