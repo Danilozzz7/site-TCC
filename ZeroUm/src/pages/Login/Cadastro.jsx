@@ -1,94 +1,87 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Reaproveite o CSS do Login
+import './Cadastro.css';
 
 function Cadastro() {
-  const [tipo, setTipo] = useState('aluno');
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [nome, setNome] = useState('');
-  const [empresa, setEmpresa] = useState('');
+  const [tipo, setTipo] = useState('estudante');
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Aqui você pode salvar os dados ou enviar para uma API
-    localStorage.setItem('usuarioCadastrado', JSON.stringify({ tipo, email, nome, empresa }));
+    // Salva o usuário no localStorage simulando cadastro
+    localStorage.setItem('usuarioCadastrado', JSON.stringify({ nome, email, tipo }));
+    alert('Cadastro realizado com sucesso! Faça login para continuar.');
     navigate('/login');
   }
 
   return (
-    <div className="page-container">
-      <div>
-        <h2 className="title">Cadastro</h2>
-        <p className="subtitle message">Crie sua conta</p>
-        <form className="form" onSubmit={handleSubmit}>
-          <label>
-            <select
-              className="input"
-              value={tipo}
-              onChange={e => setTipo(e.target.value)}
-              required
-            >
-              <option value="aluno">Aluno</option>
-              <option value="empresa">Empresa</option>
-              <option value="administrador">Administrador</option>
-            </select>
-            <span>Tipo de usuário</span>
-          </label>
+    <div className="cadastro-bg">
+      <div className="cadastro-card">
+        <h2 className="cadastro-title">Junte-se ao ZeroUm</h2>
+        <p className="cadastro-subtitle">Seu futuro começa aqui. Cadastre-se e conquiste suas oportunidades!</p>
 
-          <label>
-            <input
-              className="input"
-              type="text"
+        <form className="cadastro-form" onSubmit={handleSubmit}>
+          <label className="cadastro-label">
+            <span>Nome Completo</span>
+            <input 
+              className="cadastro-input" 
+              type="text" 
               value={nome}
               onChange={e => setNome(e.target.value)}
-              placeholder=" "
               required
+              autoFocus
+              placeholder="Digite seu nome"
             />
-            <span>Nome</span>
           </label>
 
-          {tipo === 'empresa' && (
-            <label>
-              <input
-                className="input"
-                type="text"
-                value={empresa}
-                onChange={e => setEmpresa(e.target.value)}
-                placeholder=" "
-                required
-              />
-              <span>Nome da Empresa</span>
-            </label>
-          )}
-
-          <label>
-            <input
-              className="input"
-              type="email"
+          <label className="cadastro-label">
+            <span>Email</span>
+            <input 
+              className="cadastro-input" 
+              type="email" 
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder=" "
               required
+              placeholder="email@exemplo.com"
             />
-            <span>Email</span>
           </label>
 
-          <label>
-            <input
-              className="input"
+          <label className="cadastro-label">
+            <span>Senha</span>
+            <input 
+              className="cadastro-input"
               type="password"
               value={senha}
               onChange={e => setSenha(e.target.value)}
-              placeholder=" "
               required
+              placeholder="Mínimo 6 caracteres"
+              minLength={6}
             />
-            <span>Senha</span>
           </label>
 
-          <button type="submit" className="submit">Cadastrar</button>
+          <label className="cadastro-label">
+            <span>Tipo de usuário</span>
+            <select 
+              className="cadastro-input" 
+              value={tipo} 
+              onChange={e => setTipo(e.target.value)} 
+              required
+            >
+              <option value="estudante">Estudante</option>
+              <option value="administrador">Administrador</option>
+              <option value="empresa">Empresa</option>
+            </select>
+          </label>
+
+          <button type="submit" className="cadastro-btn">Cadastrar</button>
         </form>
+
+        <p className="link-login">
+          Já tem uma conta? <a href="/login">Entre aqui</a>
+        </p>
       </div>
     </div>
   );
