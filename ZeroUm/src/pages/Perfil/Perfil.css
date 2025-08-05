@@ -42,8 +42,9 @@
 .perfil-avatar-icon {
     font-size: 3.5rem;
     color: white;
-    padding-left: 5px;
-    padding-bottom: 3px; 
+    padding-left: 1px;
+    padding-bottom: 10px; 
+
 }
 
 .perfil-title {

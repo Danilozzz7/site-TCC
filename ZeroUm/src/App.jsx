@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import Vagas from "./pages/Vagas/Vagas";
 import Perfil from "./pages/Perfil/Perfil";
 import Login from "./pages/Login/Login";
-import Cadastro from "./pages/Login/cadastro";
+import Cadastro from "./pages/Login/Cadastro";
 
 function App() {
   return (

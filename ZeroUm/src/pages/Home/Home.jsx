@@ -1,5 +1,6 @@
 // Home.jsx atualizado com vagas simplificadas e estatísticas realistas
 import './home.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const vagasDestaque = [
   {

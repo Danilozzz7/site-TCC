@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Perfil.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Perfil() {
     const [nome, setNome] = useState("");

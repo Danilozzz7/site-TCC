@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Vagas.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const vagas = [
     {
