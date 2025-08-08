@@ -1,4 +1,4 @@
-// Home.jsx atualizado com vagas simplificadas e estatísticas realistas
+
 import './home.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -36,7 +36,7 @@ function Home() {
             para sua carreira
           </h1>
           <p className="home-subtitle">
-            Feito por alunos, para alunos — somos da Escola Brasilio Flores de Azevedo, com uma empresa especializada em estágios que ajudam você a crescer.
+            Feito por alunos, para alunos — somos da Escola Brasilio Flores de Azevedo, em parceria com empresas especializadas em estágios que ajudam você a crescer.
           </p>
           <p className="home-tagline">
             <em>"Seu futuro começa hoje! Estamos aqui para abrir portas." </em>
@@ -49,7 +49,7 @@ function Home() {
 
           <div className="home-stats">
             <div>
-              <span className="stat-num">+120</span>
+              <span className="stat-num">+90</span>
               <span className="stat-label">vagas ativas</span>
             </div>
             <div>

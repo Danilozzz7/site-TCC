@@ -33,6 +33,7 @@ body, html, #root {
 .home-title-block {
   flex: 1 1 480px;
   max-width: 600px;
+  padding-left: 20px;
 }
 
 .home-title-block h1 {

@@ -7,6 +7,7 @@ import Vagas from "./pages/Vagas/Vagas";
 import Perfil from "./pages/Perfil/Perfil";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Login/Cadastro";
+import PublicarVaga from "./pages/PublicarVaga/PubliqueSuaVaga";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/publiquesuavaga" element={<PublicarVaga />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,95 @@
+.page {
+  background-color: #f5faff;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #003366;
+}
+
+
+
+.container {
+  background-color: #fff;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 8px 20px rgb(0 51 102 / 0.15);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #0059b3;
+}
+
+.infoText {
+  font-size: 0.85rem;
+  color: #0066cc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  display: block;
+  color: #004080;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid #cce0ff;
+  margin-bottom: 18px;
+  background-color: #f0f7ff;
+  color: #003366;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+  margin-bottom: 24px;
+}
+
+.button {
+  width: 100%;
+  background-color: #0059b3;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.button:hover {
+  background-color: #004080;
+}
+
+.successMessage {
+  color: #004d00;
+  background-color: #d6f5d6;
+  border: 1.5px solid #4caf50;
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
