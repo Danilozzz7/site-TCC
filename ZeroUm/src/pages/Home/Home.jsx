@@ -118,7 +118,24 @@ function Home() {
           ))}
         </div>
       </section>
+
+      <section className="publicar-vaga" id="publicar">
+  <div className="publicar-card">
+    <div className="publicar-conteudo">
+      <h2>É uma empresa? Publique sua vaga aqui!</h2>
+      <p>
+        Conecte-se com os melhores talentos da Escola Brasilio Flores de Azevedo. Preencha sua vaga com estagiários motivados e preparados!
+      </p>
+      <a href="/PubliqueSuaVaga" className="home-btn primary"> Publicar Vaga </a>
     </div>
+  </div>
+</section>
+</div>
+
+          
+   
+
+    
   );
 }
 

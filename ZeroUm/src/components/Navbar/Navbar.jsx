@@ -21,6 +21,7 @@ function Navbar() {
                 <li><Link to="/">Início</Link></li>
                 <li><Link to="/vagas">Vagas</Link></li>
                 <li><Link to="/perfil">Perfil</Link></li>
+                
             </ul>
             <LoginCadastro /> 
         </nav>
