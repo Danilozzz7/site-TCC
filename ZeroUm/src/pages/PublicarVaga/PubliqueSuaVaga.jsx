@@ -34,23 +34,7 @@ export default function PublicarVaga() {
     console.log("Dados da vaga:", formData);
     setSubmitted(true);
 
-    // Em caso de envio real para backend:
-    /*
-    const data = new FormData();
-    data.append("companyName", formData.companyName);
-    data.append("email", formData.email);
-    data.append("jobTitle", formData.jobTitle);
-    data.append("jobArea", formData.jobArea);
-    data.append("description", formData.description);
-    if (formData.image) {
-      data.append("image", formData.image);
-    }
-
-    fetch("/api/vaga", {
-      method: "POST",
-      body: data,
-    });
-    */
+   
   }
 
   return (
