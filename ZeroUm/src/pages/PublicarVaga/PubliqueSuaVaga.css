@@ -10,8 +10,6 @@
   color: #003366;
 }
 
-
-
 .container {
   background-color: #fff;
   max-width: 480px;
@@ -27,6 +25,7 @@
   margin-bottom: 24px;
   text-align: center;
   color: #0059b3;
+  padding-top: 15px;
 }
 
 .infoText {
@@ -93,3 +92,14 @@
   font-size: 1.1rem;
 }
 
+.imagePreviewContainer {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

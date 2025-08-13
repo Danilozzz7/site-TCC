@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./PubliqueSuaVaga.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function PublicarVaga() {
   const [formData, setFormData] = useState({
@@ -9,8 +8,10 @@ export default function PublicarVaga() {
     jobTitle: "",
     jobArea: "",
     description: "",
+    image: null,
   });
 
+  const [preview, setPreview] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
   function handleChange(e) {
@@ -18,17 +19,47 @@ export default function PublicarVaga() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
+  function handleImageChange(e) {
+    const file = e.target.files[0];
+    if (file) {
+      setFormData((prev) => ({ ...prev, image: file }));
+      setPreview(URL.createObjectURL(file));
+    }
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+
+    // Apenas para exemplo: mostra no console
     console.log("Dados da vaga:", formData);
     setSubmitted(true);
+
+    // Em caso de envio real para backend:
+    /*
+    const data = new FormData();
+    data.append("companyName", formData.companyName);
+    data.append("email", formData.email);
+    data.append("jobTitle", formData.jobTitle);
+    data.append("jobArea", formData.jobArea);
+    data.append("description", formData.description);
+    if (formData.image) {
+      data.append("image", formData.image);
+    }
+
+    fetch("/api/vaga", {
+      method: "POST",
+      body: data,
+    });
+    */
   }
 
   return (
     <div className="page">
       <div className="container" role="main">
         <h1 className="title">Publicar uma vaga de estágio</h1>
-        <p className="infoText">Preencha os dados abaixo para anunciar sua vaga.</p>
+        <p className="infoText">
+          Preencha os dados abaixo para anunciar sua vaga.
+        </p>
 
         {submitted ? (
           <div className="successMessage">
@@ -112,6 +143,28 @@ export default function PublicarVaga() {
               onChange={handleChange}
               required
             />
+
+            <label className="label" htmlFor="image">
+              Logo da Empresa (opcional)
+            </label>
+            <input
+              className="input"
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+
+            {preview && (
+              <div className="imagePreviewContainer">
+                <img
+                  src={preview}
+                  alt="Prévia da imagem"
+                  className="imagePreview"
+                />
+              </div>
+            )}
 
             <button type="submit" className="button">
               Publicar vaga
