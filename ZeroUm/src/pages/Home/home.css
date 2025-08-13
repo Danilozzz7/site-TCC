@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,13 +11,11 @@ body, html {
   line-height: 1.6;
 }
 
-
 .home-landing {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
-
 
 .home-header {
   display: flex;
@@ -31,7 +28,6 @@ body, html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
-
 .home-title-block {
   flex: 1 1 500px;
 }
@@ -41,6 +37,7 @@ body, html {
   font-weight: 700;
   margin-bottom: 16px;
   color: #0d47a1;
+  text-shadow: 1px 1px 4px rgba(25, 118, 210, 0.2); /* pequena sombra de texto */
 }
 
 .gradient-text {
@@ -59,8 +56,6 @@ body, html {
   margin-bottom: 32px;
 }
 
-
-
 .home-actions {
   display: flex;
   gap: 16px;
@@ -73,8 +68,9 @@ body, html {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease; /* transição mais rápida e suave */
   text-decoration: none;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.3); /* leve sombra para dar profundidade */
 }
 
 .home-btn.primary {
@@ -90,6 +86,7 @@ body, html {
   background: #e3f2fd;
   color: #1976d2;
   border: 1px solid #bbdefb;
+  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.15);
 }
 
 .home-btn.secondary:hover {
@@ -108,10 +105,9 @@ body, html {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-
 .home-stats {
   display: flex;
-  gap: 32px;
+  gap: 48px; /* maior espaçamento para respirar melhor */
   margin-top: 24px;
   font-size: 0.95rem;
   color: #345;
@@ -127,7 +123,6 @@ body, html {
 .stat-label {
   color: #444;
 }
-
 
 .home-benefits, .home-vagas {
   margin-top: 64px;
@@ -148,7 +143,6 @@ body, html {
   color: #4b5f7a;
 }
 
-
 .benefits-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -157,14 +151,15 @@ body, html {
 
 .benefit-card {
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px; /* radius um pouco maior para suavizar */
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  transition: transform 0.2s ease;
-
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .benefit-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px); /* movimento um pouco mais suave */
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.12); /* sombra mais suave e azulada */
 }
 
 .benefit-icon {
@@ -184,8 +179,6 @@ body, html {
   color: #5a6e89;
 }
 
-
-
 .vagas-list {
   display: grid;
   gap: 20px;
@@ -197,14 +190,15 @@ body, html {
   display: flex;
   gap: 16px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 14px; /* radius maior para suavizar */
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .vaga-card:hover {
   transform: scale(1.015);
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.12); /* sombra azulada suave para destaque */
 }
 
 .vaga-icon {
@@ -228,7 +222,6 @@ body, html {
   font-size: 0.95rem;
   color: #555;
 }
-
 
 .publicar-vaga {
   margin-top: 80px;
@@ -258,8 +251,11 @@ body, html {
 .publicar-card .home-btn.primary {
   background-color: #fff;
   color: #1976d2;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.4);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .publicar-card .home-btn.primary:hover {
   background-color: #f5f8fc;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.6);
 }

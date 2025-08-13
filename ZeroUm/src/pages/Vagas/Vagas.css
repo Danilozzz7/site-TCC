@@ -1,9 +1,9 @@
-/* Reset e base */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: #f5f8fc;
@@ -11,14 +11,12 @@ body {
   line-height: 1.6;
 }
 
-/* Container principal */
 .vagas-container {
   min-height: 100vh;
   padding-bottom: 40px;
   background-color: #f5f8fc;
 }
 
-/* Hero (topo) */
 .vagas-hero {
   text-align: center;
   padding: 60px 20px 40px 20px;
@@ -28,22 +26,24 @@ body {
   max-width: 1000px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
+
 .vagas-hero h1 {
   font-size: 3rem;
   font-weight: 700;
   color: #0d47a1;
   margin-bottom: 12px;
 }
+
 .vagas-hero .gradient-text {
   color: #1976d2;
 }
+
 .vagas-hero p {
   color: #455a64;
   font-size: 1.2rem;
   margin-bottom: 0;
 }
 
-/* Lista de vagas */
 .vaga-list {
   max-width: 1000px;
   margin: 0 auto;
@@ -53,7 +53,6 @@ body {
   gap: 20px;
 }
 
-/* Card de vaga */
 .vaga-card {
   display: flex;
   gap: 20px;
@@ -64,15 +63,16 @@ body {
   transition: all 0.2s ease;
   align-items: flex-start;
 }
+
 .vaga-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
+
 .vaga-card.expandida {
   background: #f0f7ff;
 }
 
-/* Ícone da vaga */
 .vaga-icon {
   width: 56px;
   height: 56px;
@@ -85,27 +85,28 @@ body {
   flex-shrink: 0;
 }
 
-/* Conteúdo principal da vaga */
 .vaga-info {
   flex: 1;
 }
+
 .vaga-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: #1565c0;
   margin-bottom: 8px;
 }
+
 .vaga-card p {
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 6px;
 }
+
 .vaga-requisitos {
   color: #1976d2;
   font-weight: 500;
 }
 
-/* Botão "Ver detalhes" */
 .vaga-btn {
   background: #e3f2fd;
   color: #1565c0;
@@ -117,34 +118,36 @@ body {
   font-size: 0.95rem;
   transition: background 0.2s ease;
 }
+
 .vaga-btn:hover {
   background: #bbdefb;
 }
 
-/* Detalhes expandidos */
 .vaga-detalhes {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #c5e1f5;
 }
+
 .vaga-detalhes-bloco h4 {
   font-size: 1rem;
   font-weight: 600;
   color: #1976d2;
   margin-bottom: 6px;
 }
+
 .vaga-detalhes-bloco p,
 .vaga-detalhes-bloco li {
   font-size: 0.95rem;
   color: #455a64;
 }
+
 .vaga-detalhes-bloco ul {
   padding-left: 20px;
   margin-top: 4px;
   margin-bottom: 12px;
 }
 
-/* Botão de inscrição */
 .vaga-inscrever {
   background-color: #1976d2;
   color: white;
@@ -155,8 +158,9 @@ body {
   font-size: 1rem;
   margin-top: 12px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
 }
+
 .vaga-inscrever:hover {
   background-color: #0d47a1;
 }
