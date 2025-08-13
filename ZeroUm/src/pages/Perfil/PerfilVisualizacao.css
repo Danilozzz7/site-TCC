@@ -1,0 +1,136 @@
+/* Fundo e container principal */
+.perfil-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d0e7ff 0%, #4a90e2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Card do perfil */
+.perfil-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(74, 144, 226, 0.4);
+  max-width: 480px;
+  width: 100%;
+  padding: 60px 50px 50px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0d3c91;
+  transition: box-shadow 0.3s ease;
+}
+
+.perfil-card:hover {
+  box-shadow: 0 22px 48px rgba(74, 144, 226, 0.55);
+}
+
+/* Avatar circular com gradiente */
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e70e2, #4898f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 20px rgba(72, 152, 241, 0.5);
+  border: 4px solid #ffffff;
+}
+
+.perfil-avatar-icon {
+  font-size: 4rem;
+  color: white;
+  line-height: 1;
+  padding-left: 2px;
+}
+
+/* Título do perfil */
+.perfil-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #2156b7;
+  margin-bottom: 36px;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(33, 86, 183, 0.3);
+}
+
+/* Campos de visualização */
+.perfil-view-field {
+  background: #e9f1ff;
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin: 14px 0;
+  width: 100%;
+  box-shadow: inset 0 2px 8px rgba(74, 144, 226, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.perfil-view-field:hover {
+  background-color: #d6e5ff;
+  box-shadow: inset 0 3px 12px rgba(74, 144, 226, 0.35);
+}
+
+/* Labels em negrito e azul mais escuro */
+.perfil-view-field strong {
+  display: block;
+  font-weight: 700;
+  color: #2f5db3;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+/* Texto dos valores */
+.perfil-view-field span,
+.perfil-view-field p {
+  color: #1a3e7c;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Estilo específico para o parágrafo da experiência */
+.perfil-view-field p {
+  white-space: pre-wrap; /* respeita quebras de linha */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .perfil-card {
+    padding: 40px 30px 40px 30px;
+    max-width: 100%;
+  }
+
+  .perfil-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .perfil-avatar-icon {
+    font-size: 3.8rem;
+  }
+
+  .perfil-title {
+    font-size: 2rem;
+    margin-bottom: 28px;
+  }
+
+  .perfil-view-field {
+    font-size: 1rem;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+
+  .perfil-view-field strong {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+}
