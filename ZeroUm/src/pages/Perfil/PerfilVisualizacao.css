@@ -1,4 +1,4 @@
-/* Fundo e container principal */
+
 .perfil-bg {
   min-height: 100vh;
   background: linear-gradient(135deg, #d0e7ff 0%, #4a90e2 100%);
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* Card do perfil */
+
 .perfil-card {
   background: #ffffff;
   border-radius: 24px;
@@ -30,7 +30,7 @@
   box-shadow: 0 22px 48px rgba(74, 144, 226, 0.55);
 }
 
-/* Avatar circular com gradiente */
+
 .perfil-avatar {
   width: 120px;
   height: 120px;
@@ -51,7 +51,7 @@
   padding-left: 2px;
 }
 
-/* Título do perfil */
+
 .perfil-title {
   font-size: 2.6rem;
   font-weight: 800;
@@ -61,7 +61,7 @@
   text-shadow: 1px 1px 5px rgba(33, 86, 183, 0.3);
 }
 
-/* Campos de visualização */
+
 .perfil-view-field {
   background: #e9f1ff;
   border-radius: 16px;
@@ -78,7 +78,7 @@
   box-shadow: inset 0 3px 12px rgba(74, 144, 226, 0.35);
 }
 
-/* Labels em negrito e azul mais escuro */
+
 .perfil-view-field strong {
   display: block;
   font-weight: 700;
@@ -87,7 +87,7 @@
   font-size: 1.15rem;
 }
 
-/* Texto dos valores */
+
 .perfil-view-field span,
 .perfil-view-field p {
   color: #1a3e7c;
@@ -96,12 +96,12 @@
   margin: 0;
 }
 
-/* Estilo específico para o parágrafo da experiência */
+
 .perfil-view-field p {
-  white-space: pre-wrap; /* respeita quebras de linha */
+  white-space: pre-wrap; 
 }
 
-/* Responsividade para telas pequenas */
+
 @media (max-width: 600px) {
   .perfil-card {
     padding: 40px 30px 40px 30px;

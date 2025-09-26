@@ -1,32 +1,21 @@
 import React from 'react';
 import './PerfilVisualizacao.css';
 
-function PerfilVisualizacao({ nome, curso, ano, telefone, email, experiencia }) {
+function PerfilVisualizacao({ location }) {
+  const links = location?.state?.links || 'Nenhum link fornecido';
+
   return (
     <div className="perfil-bg">
       <div className="perfil-card">
-        <div className="perfil-avatar">
-          <span role="img" aria-label="avatar" className="perfil-avatar-icon">👤</span>
-        </div>
         <h2 className="perfil-title">Perfil do Estudante (Visualização)</h2>
+
         <div className="perfil-view-field">
-          <strong>Nome:</strong> <span>{nome}</span>
+          <strong>Links:</strong> <span>{links}</span>
         </div>
+
         <div className="perfil-view-field">
-          <strong>Curso:</strong> <span>{curso}</span>
-        </div>
-        <div className="perfil-view-field">
-          <strong>Ano:</strong> <span>{ano}</span>
-        </div>
-        <div className="perfil-view-field">
-          <strong>Telefone:</strong> <span>{telefone}</span>
-        </div>
-        <div className="perfil-view-field">
-          <strong>Email:</strong> <span>{email}</span>
-        </div>
-        <div className="perfil-view-field">
-          <strong>Experiência:</strong>
-          <p>{experiencia}</p>
+          <strong>Foto ou Documento:</strong>
+          <div style={{ fontSize: 60, marginTop: 10 }}>👤</div>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ export default function PublicarVaga() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // Apenas para exemplo: mostra no console
+  
     console.log("Dados da vaga:", formData);
     setSubmitted(true);
 

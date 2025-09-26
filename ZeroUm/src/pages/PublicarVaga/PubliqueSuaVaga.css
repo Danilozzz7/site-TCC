@@ -1,4 +1,4 @@
-/* Fundo e container principal */
+
 .page {
   background: linear-gradient(135deg, #e6f0ff 0%, #4a90e2 100%);
   min-height: 100vh;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-/* Caixa branca com sombra mais elegante */
+
 .container {
   background-color: #ffffff;
   max-width: 520px;
@@ -31,7 +31,7 @@
     inset 0 0 16px #acc8ff;
 }
 
-/* Título com fonte forte e sombra */
+
 .title {
   font-weight: 800;
   font-size: 2rem;
@@ -43,7 +43,7 @@
   letter-spacing: 0.05em;
 }
 
-/* Texto informativo */
+
 .infoText {
   font-size: 0.9rem;
   color: #104a91;
@@ -53,7 +53,6 @@
   user-select: none;
 }
 
-/* Labels */
 .label {
   font-weight: 700;
   font-size: 1rem;
@@ -69,7 +68,7 @@
   color: #4078f1;
 }
 
-/* Inputs, select, textarea */
+
 .input,
 .select,
 .textarea {
@@ -110,7 +109,7 @@
   box-shadow: 0 0 12px rgba(58, 101, 235, 0.6);
 }
 
-/* Textarea ajuste */
+
 .textarea {
   min-height: 120px;
   resize: vertical;
@@ -118,7 +117,7 @@
   line-height: 1.4;
 }
 
-/* Botão com gradiente azul e sombra */
+
 .button {
   width: 100%;
   background: linear-gradient(135deg, #3b6ddb, #1a44c9);
@@ -145,7 +144,7 @@
   box-shadow: 0 6px 18px rgba(29, 72, 202, 0.7);
 }
 
-/* Mensagem de sucesso */
+
 .successMessage {
   color: #1f5c14;
   background-color: #d4efdb;
@@ -160,7 +159,6 @@
   transition: all 0.4s ease;
 }
 
-/* Preview da imagem */
 .imagePreviewContainer {
   margin-bottom: 24px;
   text-align: center;
