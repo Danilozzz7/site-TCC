@@ -7,6 +7,7 @@ const vagasDestaque = [
     titulo: "Estágio em Desenvolvimento Web",
     empresa: "Tech Solutions",
     descricao: "Desenvolvimento de aplicações web utilizando React e Node.js.",
+    requisitos: "Conhecimento em JavaScript, HTML, CSS. Desejável experiência com React.",
     cor: "#2196f3",
     icone: "💻"
   },
@@ -14,6 +15,7 @@ const vagasDestaque = [
     titulo: "Estágio em Marketing Digital",
     empresa: "Marketing Pro",
     descricao: "Auxiliar na criação de campanhas digitais e gestão de redes sociais.",
+    requisitos: "Conhecimento em SEO, Google Ads e redes sociais.",
     cor: "#43a047",
     icone: "📈"
   },
@@ -21,6 +23,7 @@ const vagasDestaque = [
     titulo: "Estágio em Design Gráfico",
     empresa: "Creative Minds",
     descricao: "Criação de peças gráficas para campanhas publicitárias e redes sociais.",
+    requisitos: "Conhecimento em Adobe Photoshop e Illustrator.",
     cor: "#ab47bc",
     icone: "🎨"
   }
@@ -113,7 +116,8 @@ function Home() {
               <div>
                 <h3>{vaga.titulo}</h3>
                 <p><strong>Empresa:</strong> {vaga.empresa}</p>
-                <p>{vaga.descricao}</p>
+                <p><strong>descrição:</strong>{vaga.descricao}</p>
+                <p><strong>requisitos:</strong>{vaga.requisitos}</p>
               </div>
             </div>
           ))}
