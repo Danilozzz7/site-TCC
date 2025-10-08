@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Importe o axios
 import './Login.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// Importe o seu componente InputField
+import InputField from '../../components/Cadastro/InputField'; 
 
 function Login() {
   const [tipo, setTipo] = useState('estudante');
@@ -9,11 +11,35 @@ function Login() {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  // Estados para feedback ao usuário
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  
+  // Defina a URL da sua API de login aqui
+  const API_URL = "http://localhost:8080/api/v1/login"; // Altere se o endpoint for diferente
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem('usuarioLogado', JSON.stringify({ tipo, email }));
-    alert('Login realizado com sucesso! Bem-vindo ao ZeroUm.');
-    navigate('/');
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Objeto com os dados para enviar à API
+      const dadosLogin = { email, senha, tipo };
+      
+      // Chamada POST para a API
+      await axios.post(API_URL, dadosLogin);
+
+      alert('Login realizado com sucesso! Bem-vindo ao ZeroUm.');
+      localStorage.setItem('usuarioLogado', JSON.stringify({ tipo, email }));
+      navigate('/');
+
+    } catch (err) {
+      setError('Email, senha ou tipo de usuário incorretos. Tente novamente.');
+      console.error("Erro no login:", err);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -23,30 +49,27 @@ function Login() {
         <p className="login-subtitle">Acesse sua conta para encontrar oportunidades incríveis!</p>
 
         <form className="login-form" onSubmit={handleSubmit}>
-          <label className="login-label">
-            <span>Email</span>
-            <input
-              className="login-input"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              autoFocus
-              placeholder="email@exemplo.com"
-            />
-          </label>
+          {/* Mostra uma mensagem de erro, se houver */}
+          {error && <p style={{ color: '#ff6b6b', textAlign: 'center', marginBottom: '10px' }}>{error}</p>}
+          
+          <InputField
+            id="email"
+            label="email@exemplo.com"
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            required
+            autoFocus
+          />
 
-          <label className="login-label">
-            <span>Senha</span>
-            <input
-              className="login-input"
-              type="password"
-              value={senha}
-              onChange={e => setSenha(e.target.value)}
-              required
-              placeholder="Sua senha"
-            />
-          </label>
+          <InputField
+            id="senha"
+            label="Sua senha"
+            type="password"
+            value={senha}
+            onChange={e => setSenha(e.target.value)}
+            required
+          />
 
           <label className="login-label">
             <span>Tipo de usuário</span>
@@ -61,8 +84,11 @@ function Login() {
               <option value="empresa">Empresa</option>
             </select>
           </label>
-
-          <button type="submit" className="login-btn">Entrar</button>
+          
+          {/* Botão com estado de loading */}
+          <button type="submit" className="login-btn" disabled={isLoading}>
+            {isLoading ? 'Entrando...' : 'Entrar'}
+          </button>
         </form>
 
         <p className="link-cadastro">

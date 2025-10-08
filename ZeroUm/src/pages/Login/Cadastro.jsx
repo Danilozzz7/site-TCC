@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Cadastro.css';
-import InputField from '../Cadastro/InputField';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import InputField from '../../components/Cadastro/InputField';
 
 function Cadastro() {
   const [nome, setNome] = useState('');
@@ -12,14 +11,28 @@ function Cadastro() {
   const [tipo, setTipo] = useState('estudante');
   const navigate = useNavigate();
 
-  const API_URL = "";
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  function handleSubmit(e) {
+  const API_URL = "http://localhost:8080/api/v1/usuario";
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    // Salva o usuário no localStorage simulando cadastro
-    localStorage.setItem('usuarioCadastrado', JSON.stringify({ nome, email, tipo }));
-    alert('Cadastro realizado com sucesso! Faça login para continuar.');
-    navigate('/login');
+    setIsLoading(true);
+    setError('');
+
+    const novoUsuario = { nome, email, senha, tipo };
+
+    try {
+      await axios.post(API_URL, novoUsuario);
+      alert('Cadastro realizado com sucesso! Faça login para continuar.');
+      navigate('/login');
+    } catch (err) {
+      setError('Erro no cadastro. Verifique os dados ou se o email já existe.');
+      console.error("Erro no cadastro:", err);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -29,16 +42,19 @@ function Cadastro() {
         <p className="cadastro-subtitle">Seu futuro começa aqui. Cadastre-se e conquiste suas oportunidades!</p>
 
         <form className="cadastro-form" onSubmit={handleSubmit}>
+          {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+          
           <label className="cadastro-label">
             <span>Nome Completo</span>
             <InputField 
-              className="cadastro-input" 
+              className="cadastro-input"
               type="text" 
               value={nome}
               onChange={e => setNome(e.target.value)}
               required
               autoFocus
-              placeholder="Digite seu nome"
+              label="Digite seu nome"
+              id="nome-completo"
             />
           </label>
 
@@ -50,7 +66,8 @@ function Cadastro() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              placeholder="email@exemplo.com"
+              label="email@exemplo.com"
+              id="email"
             />
           </label>
 
@@ -62,8 +79,9 @@ function Cadastro() {
               value={senha}
               onChange={e => setSenha(e.target.value)}
               required
-              placeholder="Mínimo 6 caracteres"
+              label="Mínimo 6 caracteres"
               minLength={6}
+              id="senha"
             />
           </label>
 
@@ -80,8 +98,10 @@ function Cadastro() {
               <option value="empresa">Empresa</option>
             </select>
           </label>
-
-          <button type="submit" className="cadastro-btn">Cadastrar</button>
+          
+          <button type="submit" className="cadastro-btn" disabled={isLoading}>
+            {isLoading ? 'Cadastrando...' : 'Cadastrar'}
+          </button>
         </form>
 
         <p className="link-login">
