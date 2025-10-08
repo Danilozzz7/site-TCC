@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Cadastro.css';
+import InputField from '../Cadastro/InputField';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Cadastro() {
@@ -9,6 +11,8 @@ function Cadastro() {
   const [senha, setSenha] = useState('');
   const [tipo, setTipo] = useState('estudante');
   const navigate = useNavigate();
+
+  const API_URL = "";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,7 +31,7 @@ function Cadastro() {
         <form className="cadastro-form" onSubmit={handleSubmit}>
           <label className="cadastro-label">
             <span>Nome Completo</span>
-            <input 
+            <InputField 
               className="cadastro-input" 
               type="text" 
               value={nome}
@@ -40,7 +44,7 @@ function Cadastro() {
 
           <label className="cadastro-label">
             <span>Email</span>
-            <input 
+            <InputField
               className="cadastro-input" 
               type="email" 
               value={email}
@@ -52,7 +56,7 @@ function Cadastro() {
 
           <label className="cadastro-label">
             <span>Senha</span>
-            <input 
+            <InputField 
               className="cadastro-input"
               type="password"
               value={senha}
