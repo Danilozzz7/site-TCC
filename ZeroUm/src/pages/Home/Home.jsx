@@ -105,6 +105,7 @@ function Home() {
 
       <section className="home-vagas" id="vagas">
         <h2>Vagas em destaque</h2>
+        <h4>Veja a vaga que melhor se encaixa com você!</h4>
         <div className="vagas-list">
           {vagasDestaque.map((vaga, idx) => (
             <div className="vaga-card" key={idx}>

@@ -37,7 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/vagas" element={<Vagas />} />
         <Route path="/perfil" element={<Perfil />} />
-        {/* Nova rota para visualização do perfil */}
+       
         <Route path="/perfil-visualizacao" element={<PerfilVisualizacaoWrapper />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
