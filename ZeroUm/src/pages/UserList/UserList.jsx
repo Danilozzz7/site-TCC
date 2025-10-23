@@ -64,7 +64,7 @@ function UserList() {
     
     return (
         <div className="user-list-container">
-            <h2>Gerenciamento de Usuários do Projeto Kratos</h2>
+            <h2>Gerenciamento de Usuários </h2>
             <p className="user-count">Total de usuários: {users.length}</p>
             
             <table className="users-table">

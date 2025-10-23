@@ -111,7 +111,7 @@
     transform: translateY(-1px);
 }
 
-/* Botão Excluir */
+
 .action-buttons .delete-btn {
     background-color: #dc3545; 
     color: white;
@@ -122,7 +122,6 @@
     transform: translateY(-1px);
 }
 
-/* Botão Salvar */
 .action-buttons .save-btn {
     background-color: #28a745; 
     color: white;
