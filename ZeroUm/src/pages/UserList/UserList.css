@@ -1,0 +1,179 @@
+/* ------------------------------------------------------------------- */
+/* 1. CONTAINER E CABEÇALHO */
+/* ------------------------------------------------------------------- */
+
+.user-list-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.user-list-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.user-count {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 2. TABELA PRINCIPAL */
+/* ------------------------------------------------------------------- */
+
+.users-table {
+    width: 100%;
+    border-collapse: separate; /* Permite bordas arredondadas e espaçamento */
+    border-spacing: 0;
+    overflow: hidden; /* Garante que a borda do container segure o arredondamento */
+}
+
+/* Cabeçalho da Tabela */
+.users-table thead {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+}
+
+.users-table th {
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 600;
+    /* Estilo de borda para simular linhas */
+    border-bottom: 2px solid #0056b3; 
+}
+
+/* Linhas da Tabela */
+.users-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.users-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Fundo cinza claro para linhas pares */
+}
+
+.users-table tbody tr:hover {
+    background-color: #e2f4ff; /* Realce ao passar o mouse */
+}
+
+.users-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+/* ------------------------------------------------------------------- */
+/* 3. CAMPOS DE INPUT NA EDIÇÃO */
+/* ------------------------------------------------------------------- */
+
+.users-table input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 90%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.users-table input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 4. BOTÕES E AÇÕES */
+/* ------------------------------------------------------------------- */
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+/* Botão Editar */
+.action-buttons .edit-btn {
+    background-color: #ffc107; /* Amarelo (Warning) */
+    color: #333;
+}
+
+.action-buttons .edit-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-1px);
+}
+
+/* Botão Excluir */
+.action-buttons .delete-btn {
+    background-color: #dc3545; /* Vermelho (Danger) */
+    color: white;
+}
+
+.action-buttons .delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Botão Salvar */
+.action-buttons .save-btn {
+    background-color: #28a745; /* Verde (Success) */
+    color: white;
+}
+
+.action-buttons .save-btn:hover {
+    background-color: #1e7e34;
+    transform: translateY(-1px);
+}
+
+/* Botão Cancelar */
+.action-buttons .cancel-btn {
+    background-color: #6c757d; /* Cinza (Secondary) */
+    color: white;
+}
+
+.action-buttons .cancel-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. RESPONSIVIDADE (Table overflow on small screens) */
+/* ------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .user-list-container {
+        margin: 20px 10px;
+        padding: 10px;
+        /* Força a tabela a rolar lateralmente em telas pequenas */
+        overflow-x: auto;
+    }
+
+    .users-table {
+        min-width: 700px; /* Garante que a tabela não quebre em colunas menores */
+    }
+
+    .users-table td, .users-table th {
+        padding: 10px 5px;
+        font-size: 0.9em;
+    }
+}
