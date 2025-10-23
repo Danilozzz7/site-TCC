@@ -8,9 +8,8 @@ import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Login/Cadastro";
 import PublicarVaga from "./pages/PublicarVaga/PubliqueSuaVaga";
 import PerfilVisualizacao from "./pages/Perfil/PerfilVisualizacao"; 
-// Importe o novo componente de listagem/gerenciamento
 import UserList from './pages/UserList/UserList.jsx'; 
-// OBS: Ajuste o caminho acima se você salvou o UserList em outro lugar!
+
 
 function PerfilVisualizacaoWrapper() {
   const location = useLocation();
@@ -45,8 +44,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/publiquesuavaga" element={<PublicarVaga />} />
-
-        {/* NOVA ROTA PARA O CRUD DE USUÁRIOS (ADMINISTRAÇÃO) */}
         <Route path="/admin/usuarios" element={<UserList />} />
       </Routes>
       <Footer />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
-import './UserList.css'; // Importa os novos estilos
+import './UserList.css'; 
 
 const API_BASE_URL = 'http://localhost:8080/api/v1/usuario'; 
 
@@ -9,7 +9,7 @@ function UserList() {
     const [editingUser, setEditingUser] = useState(null); 
     const [formData, setFormData] = useState({}); 
 
-    // READ: Função para buscar a lista de usuários
+    
     const fetchUsers = () => {
         axios.get(API_BASE_URL)
             .then(response => {
@@ -22,10 +22,10 @@ function UserList() {
         fetchUsers();
     }, []); 
 
-    // --- Lógica de EDIÇÃO (UPDATE) ---
+    
     const startEdit = (user) => {
         setEditingUser(user.id);
-        // Preenche o formulário com campos editáveis (Nome, Email, Nivel, Status)
+        
         setFormData({ 
             nome: user.nome, 
             email: user.email,
@@ -43,25 +43,25 @@ function UserList() {
             .then(() => {
                 alert('Usuário atualizado com sucesso!');
                 setEditingUser(null);
-                fetchUsers(); // Recarrega a lista
+                fetchUsers(); 
             })
             .catch(error => console.error("Erro ao atualizar:", error));
     };
     
-    // --- Lógica de EXCLUSÃO (DELETE) ---
+    
     const handleDelete = (id) => {
         if (window.confirm(`Tem certeza que deseja excluir o usuário ID ${id}?`)) {
             axios.delete(`${API_BASE_URL}/${id}`)
                 .then(() => {
                     alert('Usuário excluído com sucesso!');
-                    fetchUsers(); // Recarrega a lista
+                    fetchUsers(); 
                 })
                 .catch(error => console.error("Erro ao excluir:", error));
         }
     };
 
 
-    // --- Renderização (LISTAGEM) ---
+    
     return (
         <div className="user-list-container">
             <h2>Gerenciamento de Usuários do Projeto Kratos</h2>
@@ -87,7 +87,7 @@ function UserList() {
                                 <td>{user.id}</td>
                                 
                                 {editingUser === user.id ? (
-                                    // Modo de Edição (UPDATE)
+                                   
                                     <>
                                         <td><input name="nome" type="text" value={formData.nome || ''} onChange={handleChange} /></td>
                                         <td><input name="email" type="text" value={formData.email || ''} onChange={handleChange} /></td>
@@ -99,7 +99,7 @@ function UserList() {
                                         </td>
                                     </>
                                 ) : (
-                                    // Modo de Visualização (READ)
+                                    
                                     <>
                                         <td>{user.nome}</td>
                                         <td>{user.email}</td>

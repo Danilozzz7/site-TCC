@@ -1,6 +1,4 @@
-/* ------------------------------------------------------------------- */
-/* 1. CONTAINER E CABEÇALHO */
-/* ------------------------------------------------------------------- */
+
 
 .user-list-container {
     max-width: 1200px;
@@ -29,20 +27,17 @@
 }
 
 
-/* ------------------------------------------------------------------- */
-/* 2. TABELA PRINCIPAL */
-/* ------------------------------------------------------------------- */
 
 .users-table {
     width: 100%;
-    border-collapse: separate; /* Permite bordas arredondadas e espaçamento */
+    border-collapse: separate; 
     border-spacing: 0;
-    overflow: hidden; /* Garante que a borda do container segure o arredondamento */
+    overflow: hidden; 
 }
 
-/* Cabeçalho da Tabela */
+
 .users-table thead {
-    background-color: #007bff; /* Azul primário */
+    background-color: #007bff; 
     color: white;
 }
 
@@ -50,21 +45,20 @@
     padding: 15px 10px;
     text-align: left;
     font-weight: 600;
-    /* Estilo de borda para simular linhas */
     border-bottom: 2px solid #0056b3; 
 }
 
-/* Linhas da Tabela */
+
 .users-table tbody tr {
     transition: background-color 0.3s ease;
 }
 
 .users-table tbody tr:nth-child(even) {
-    background-color: #f8f9fa; /* Fundo cinza claro para linhas pares */
+    background-color: #f8f9fa; 
 }
 
 .users-table tbody tr:hover {
-    background-color: #e2f4ff; /* Realce ao passar o mouse */
+    background-color: #e2f4ff; 
 }
 
 .users-table td {
@@ -73,9 +67,7 @@
     vertical-align: middle;
 }
 
-/* ------------------------------------------------------------------- */
-/* 3. CAMPOS DE INPUT NA EDIÇÃO */
-/* ------------------------------------------------------------------- */
+
 
 .users-table input[type="text"] {
     padding: 8px;
@@ -93,10 +85,6 @@
 }
 
 
-/* ------------------------------------------------------------------- */
-/* 4. BOTÕES E AÇÕES */
-/* ------------------------------------------------------------------- */
-
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -112,9 +100,9 @@
     min-width: 80px;
 }
 
-/* Botão Editar */
+
 .action-buttons .edit-btn {
-    background-color: #ffc107; /* Amarelo (Warning) */
+    background-color: #ffc107; 
     color: #333;
 }
 
@@ -125,7 +113,7 @@
 
 /* Botão Excluir */
 .action-buttons .delete-btn {
-    background-color: #dc3545; /* Vermelho (Danger) */
+    background-color: #dc3545; 
     color: white;
 }
 
@@ -136,7 +124,7 @@
 
 /* Botão Salvar */
 .action-buttons .save-btn {
-    background-color: #28a745; /* Verde (Success) */
+    background-color: #28a745; 
     color: white;
 }
 
@@ -145,9 +133,9 @@
     transform: translateY(-1px);
 }
 
-/* Botão Cancelar */
+
 .action-buttons .cancel-btn {
-    background-color: #6c757d; /* Cinza (Secondary) */
+    background-color: #6c757d; 
     color: white;
 }
 
@@ -156,20 +144,17 @@
     transform: translateY(-1px);
 }
 
-/* ------------------------------------------------------------------- */
-/* 5. RESPONSIVIDADE (Table overflow on small screens) */
-/* ------------------------------------------------------------------- */
+
 
 @media (max-width: 768px) {
     .user-list-container {
         margin: 20px 10px;
         padding: 10px;
-        /* Força a tabela a rolar lateralmente em telas pequenas */
         overflow-x: auto;
     }
 
     .users-table {
-        min-width: 700px; /* Garante que a tabela não quebre em colunas menores */
+        min-width: 700px; 
     }
 
     .users-table td, .users-table th {
